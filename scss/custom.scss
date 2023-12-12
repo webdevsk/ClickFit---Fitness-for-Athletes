@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "luloCleanOne";
+  src: url("/css/Lulo\ Clean\ One.otf") format("opentype");
+}
+@font-face {
+  font-family: "luloCleanBold";
+  src: url("/css/Lulo\ Clean\ One\ Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "dinNextLight";
+  src: url("/css/DIN\ Next\ W10\ Light.otf") format("opentype");
+}
+
+$font-family-base: "dinNextLight", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$font-family-sans-serif: "luloCleanBold", system-ui, -apple-system, "Segoe UI",
+  Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+$body-bg: hsl(120, 1%, 18%);
+$body-color: hsl(0, 0%, 100%);
+$body-emphasis-color: hsl(42, 75%, 65%);
+$body-line-height: 1.4em;
+$body-font-size: 18px;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-sans-serif;
+  line-height: 1.1em;
+}
+
+// Bootstrap overrides
+// Using CSS Grid instead of bootstrap Grid
+$enable-grid-classes: false;
+$enable-cssgrid: true;
+
+// bootstrap
+@import "../bootstrap/scss/bootstrap.scss";
