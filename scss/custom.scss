@@ -1,7 +1,9 @@
+// Uppercase font
 @font-face {
   font-family: "luloCleanOne";
   src: url("/css/Lulo\ Clean\ One.otf") format("opentype");
 }
+// Uppercase font
 @font-face {
   font-family: "luloCleanBold";
   src: url("/css/Lulo\ Clean\ One\ Bold.otf") format("opentype");
@@ -11,19 +13,39 @@
   src: url("/css/DIN\ Next\ W10\ Light.otf") format("opentype");
 }
 
+// Bootstrap overrides
+// Using CSS Grid instead of bootstrap Grid
+
+// $enable-grid-classes: false;
+$enable-cssgrid: true;
+
+// Changing default font
 $font-family-base: "dinNextLight", system-ui, -apple-system, "Segoe UI", Roboto,
   "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
+//Add a new font
 $font-family-sans-serif: "luloCleanBold", system-ui, -apple-system, "Segoe UI",
   Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
+// Color and font overrides
 $body-bg: hsl(120, 1%, 18%);
 $body-color: hsl(0, 0%, 100%);
 $body-emphasis-color: hsl(42, 75%, 65%);
 $body-line-height: 1.4em;
 $body-font-size: 18px;
+
+$h1-font-size: 5.8rem;
+$h2-font-size: 2.5rem;
+$h3-font-size: 2rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 0.9rem;
+$h6-font-size: 0.7rem;
+
+:root {
+  --header-height: 90px;
+}
 
 h1,
 h2,
@@ -31,14 +53,118 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family-sans-serif;
-  line-height: 1.1em;
+  font-family: var(--bs-font-sans-serif);
+  line-height: 1em;
+  letter-spacing: -0.1em;
 }
 
-// Bootstrap overrides
-// Using CSS Grid instead of bootstrap Grid
-$enable-grid-classes: false;
-$enable-cssgrid: true;
+// container limit so that the content doesnt stretch on Wide monitors
+
+.container-fluid {
+  max-width: 1560px;
+  margin-inline: auto;
+}
+
+.btn.primary {
+  padding: 1rem 2rem;
+  background: var(--bs-emphasis-color) !important;
+  border: 0 transparent;
+  transition: opacity 0.3s ease-in-out;
+  line-height: 1;
+  border-radius: 0;
+  & > * {
+    margin-block: 0;
+    color: var(--bs-black);
+  }
+}
+.btn.primary:hover {
+  opacity: 0.8;
+}
+
+button.call-to-action {
+  --_scale: 1;
+  display: inline-grid;
+  vertical-align: middle;
+  position: relative;
+  grid-template-columns: repeat(2, max-content);
+  padding: 0;
+  justify-items: center;
+  border: 2px solid var(--bs-emphasis-color);
+  overflow: hidden;
+  border-radius: 0.1rem;
+  color: var(--bs-black);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition: transform 0.5s ease-out;
+    transform: scaleX(var(--_scale, 1));
+    grid-column: 1/2;
+    background: var(--bs-emphasis-color);
+  }
+
+  &:hover {
+    --_scale: 2;
+  }
+
+  & > * {
+    margin-block: 0;
+    line-height: 1.5;
+    padding: 1rem 1.5rem;
+    z-index: 1;
+  }
+}
+
+ion-icon {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.navbar {
+  margin-bottom: calc(var(--header-height) * -1);
+  @media (max-width: 1199px) {
+    position: relative !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-collapse {
+    position: absolute;
+    z-index: 99;
+    inset: 100% 0 0 0;
+    .navbar-nav {
+      background: hsl(0% 0% 0% / 80%);
+      padding-block: 1rem;
+      a,
+      a.active {
+        color: white;
+        padding: 1rem 2rem;
+        line-height: 1.5;
+        background-color: transparent;
+        transition: background-color color 0.1s linear;
+        & > * {
+          margin-block: 0;
+        }
+      }
+      a:hover {
+        background-color: var(--bs-emphasis-color);
+        color: black;
+      }
+    }
+  }
+}
+.hero {
+  // <a href="https://www.freepik.com/free-ai-image/one-man-scores-winning-touchdown-rivalry-game-generated-by-ai_41293397.htm#query=athletes&position=12&from_view=search&track=sph&uuid=576bb41d-5cf8-43f9-bc0f-d906598af400">Image By vecstock</a>
+  background-image: url(../images/16838.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: hsl(0deg 0% 0% / 50%);
+  background-blend-mode: color;
+  padding-top: calc(var(--header-height) * 1);
+}
 
 // bootstrap
 @import "../bootstrap/scss/bootstrap.scss";
