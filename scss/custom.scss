@@ -202,5 +202,54 @@ ion-icon {
   }
 }
 
+.our-services_image-content {
+  --_duration: 1s;
+  --_delay: 0.5s;
+  position: relative;
+  overflow: hidden;
+  .info-tooltip {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 1;
+    transition: translate var(--_duration) ease-in-out var(--_delay);
+
+    & > * {
+      background: hsl(0deg 0% 0% / 70%);
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.5em;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+  }
+  &:hover .info-tooltip {
+    translate: 0 -100%;
+    transition: translate var(--_duration) ease-in-out 0s;
+  }
+  .info {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: -100%;
+    background: hsl(0deg 0% 0% / 70%);
+    transition: translate var(--_duration) ease-in-out 0s;
+  }
+  &:hover .info {
+    transition: translate var(--_duration) ease-in-out var(--_delay);
+    translate: 0 -100%;
+  }
+
+  .scrollable {
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 // bootstrap
 @import "../bootstrap/scss/bootstrap.scss";

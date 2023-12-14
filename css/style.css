@@ -197,6 +197,53 @@ ion-icon {
   margin-right: 0.5rem;
 }
 
+.our-services_image-content {
+  --_duration: 1s;
+  --_delay: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.our-services_image-content .info-tooltip {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1;
+  transition: translate var(--_duration) ease-in-out var(--_delay);
+}
+.our-services_image-content .info-tooltip > * {
+  background: hsla(0, 0%, 0%, 0.7);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5em;
+  font-weight: 700;
+  opacity: 0.9;
+}
+.our-services_image-content:hover .info-tooltip {
+  translate: 0 -100%;
+  transition: translate var(--_duration) ease-in-out 0s;
+}
+.our-services_image-content .info {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: -100%;
+  background: hsla(0, 0%, 0%, 0.7);
+  transition: translate var(--_duration) ease-in-out 0s;
+}
+.our-services_image-content:hover .info {
+  transition: translate var(--_duration) ease-in-out var(--_delay);
+  translate: 0 -100%;
+}
+.our-services_image-content .scrollable {
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+
 /*!
  * Bootstrap  v5.3.2 (https://getbootstrap.com/)
  * Copyright 2011-2023 The Bootstrap Authors
@@ -421,11 +468,11 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
-  font-size: calc(1.705rem + 5.46vw);
+  font-size: calc(1.675rem + 5.1vw);
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 5.8rem;
+    font-size: 5.5rem;
   }
 }
 
@@ -8996,7 +9043,7 @@ textarea.form-control-lg {
 }
 
 .fs-1 {
-  font-size: calc(1.705rem + 5.46vw) !important;
+  font-size: calc(1.675rem + 5.1vw) !important;
 }
 
 .fs-2 {
@@ -12834,7 +12881,7 @@ textarea.form-control-lg {
 }
 @media (min-width: 1200px) {
   .fs-1 {
-    font-size: 5.8rem !important;
+    font-size: 5.5rem !important;
   }
   .fs-2 {
     font-size: 2.5rem !important;
