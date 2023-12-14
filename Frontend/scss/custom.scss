@@ -1,16 +1,16 @@
 // Uppercase font
 @font-face {
   font-family: "luloCleanOne";
-  src: url("/css/Lulo\ Clean\ One.otf") format("opentype");
+  src: url("./Lulo\ Clean\ One.otf") format("opentype");
 }
 // Uppercase font
 @font-face {
   font-family: "luloCleanBold";
-  src: url("/css/Lulo\ Clean\ One\ Bold.otf") format("opentype");
+  src: url("./Lulo\ Clean\ One\ Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "dinNextLight";
-  src: url("/css/DIN\ Next\ W10\ Light.otf") format("opentype");
+  src: url("./DIN\ Next\ W10\ Light.otf") format("opentype");
 }
 
 // Bootstrap overrides
@@ -203,7 +203,7 @@ ion-icon {
 }
 
 .our-services_image-content {
-  --_duration: 1s;
+  --_duration: 0.8s;
   --_delay: 0.5s;
   position: relative;
   overflow: hidden;
@@ -219,9 +219,10 @@ ion-icon {
 
     & > * {
       background: hsl(0deg 0% 0% / 70%);
-      padding: 0.3rem 0.5rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 0.5em;
       font-weight: 700;
+      font-size: 0.8rem;
       opacity: 0.9;
     }
   }
