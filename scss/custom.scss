@@ -97,12 +97,12 @@ ion-icon {
 
 .navbar {
   margin-bottom: calc(var(--header-height) * -1);
-  @media (max-width: 1199px) {
+  @media (max-width: 991px) {
     position: relative !important;
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   .navbar-collapse {
     position: absolute;
     z-index: 99;
@@ -156,7 +156,7 @@ ion-icon {
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: 0;
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       inset: 0 0 0 40%;
       background-color: hsl(0deg 0% 0% / 0%);
       background-position: center center;
@@ -180,7 +180,7 @@ ion-icon {
     background-repeat: no-repeat;
     background-attachment: fixed;
     z-index: 0;
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       inset: 0 40% 0 0;
       background-color: hsl(0deg 0% 0% / 0%);
       background-position: center center;
@@ -248,6 +248,26 @@ ion-icon {
     overflow-y: auto;
     height: 100%;
     width: 100%;
+  }
+}
+
+// Spinner for Ajax
+.spinner {
+  border: 0.325rem solid #f3f3f3;
+  border-top: 0.325rem solid var(--bs-emphasis-color);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  animation: spin 2s linear infinite;
+  margin-inline: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
