@@ -38,7 +38,7 @@ h6 {
   margin-inline: auto;
 }
 
-.btn.primary {
+button.primary {
   padding: 1rem 2rem;
   background: var(--bs-emphasis-color) !important;
   border: 0 transparent;
@@ -49,9 +49,9 @@ h6 {
     margin-block: 0;
     color: var(--bs-black);
   }
-}
-.btn.primary:hover {
-  opacity: 0.8;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 button.call-to-action {
@@ -108,7 +108,7 @@ ion-icon {
     z-index: 99;
     inset: 100% 0 0 0;
     .navbar-nav {
-      background: hsl(0% 0% 0% / 80%);
+      background: hsl(0deg 0% 0% / 80%);
       padding-block: 1rem;
       a,
       a.active {
@@ -139,25 +139,66 @@ ion-icon {
   padding-top: calc(var(--header-height) * 1);
 }
 
-.about-us > * {
-  z-index: 1;
-}
-.about-us::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url(../images/samantha-gades-k95uqdEe8R4-unsplash.jpg);
-  background-size: cover;
-  background-color: hsl(0deg 0% 0% / 70%);
-  background-position: center center;
-  background-blend-mode: color;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  z-index: 0;
-  @media (min-width: 1200px) {
-    inset: 0 0 0 40%;
-    background-color: hsl(0deg 0% 0% / 0%);
+.about-us {
+  & > * {
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../images/samantha-gades-k95uqdEe8R4-unsplash.jpg);
+    background-size: cover;
+    background-color: hsl(0deg 0% 0% / 70%);
     background-position: center center;
+    background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 0;
+    @media (min-width: 1200px) {
+      inset: 0 0 0 40%;
+      background-color: hsl(0deg 0% 0% / 0%);
+      background-position: center center;
+    }
+  }
+}
+.packages-section {
+  & > * {
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../images/alexander-redl-d3bYmnZ0ank-unsplash.jpg);
+    background-size: cover;
+    background-color: hsl(0deg 0% 0% / 70%);
+    background-position: center center;
+    background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 0;
+    @media (min-width: 1200px) {
+      inset: 0 40% 0 0;
+      background-color: hsl(0deg 0% 0% / 0%);
+      background-position: center center;
+    }
+  }
+}
+.packages-section__benefits {
+  li {
+    margin-bottom: 1rem;
+  }
+  & li > * {
+    display: inline;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 600;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-right: 0.5rem;
   }
 }
 
